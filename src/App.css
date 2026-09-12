@@ -1,0 +1,1903 @@
+/* =========================================================
+   PLAYVERSE: 16-BIT DAYLIGHT RETRO PIXEL WORLD - STYLESHEET
+   ========================================================= */
+
+:root {
+  --sky-blue: #38bdf8;
+  --sky-soft: #7dd3fc;
+  --sun-gold: #fde047;
+  --gold-primary: #facc15;
+  --gold-border: #fef08a;
+  --gold-dark: #854d0e;
+  --grass-bright: #4ade80;
+  --grass-deep: #16a34a;
+  --dirt-brown: #78350f;
+  --water-blue: #0ea5e9;
+  --neon-purple: #a855f7;
+  --neon-pink: #ec4899;
+  
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-display: 'Silkscreen', monospace;
+  --font-terminal: 'VT323', monospace;
+}
+
+/* Master World Container */
+.playverse-world {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(180deg, #38bdf8 0%, #7dd3fc 45%, #93c5fd 85%, #86efac 100%);
+}
+
+/* =========================================================
+   1. TOP HEADER NAVIGATION
+   ========================================================= */
+.pv-header {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 36px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid #334155;
+}
+
+.pv-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.pv-gamepad-icon {
+  width: 34px;
+  height: 24px;
+  background: #7c3aed;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 2px 2px 0 #4c1d95, inset -2px -2px 0 #5b21b6;
+}
+
+.pv-gamepad-icon .dpad {
+  position: absolute;
+  left: 5px;
+  top: -1px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pv-gamepad-icon .buttons {
+  position: absolute;
+  right: 6px;
+  top: 3px;
+  font-size: 9px;
+  color: #facc15;
+  letter-spacing: 2px;
+}
+
+.pv-brand-title {
+  font-family: var(--font-pixel);
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: var(--gold-primary);
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* Nav Links */
+.pv-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.pv-nav-link {
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.pv-nav-link:hover, .pv-nav-link.active {
+  color: var(--gold-primary);
+  border-bottom-color: var(--gold-primary);
+  text-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+}
+
+/* Header Right */
+.pv-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pv-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pv-search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.pv-search-box input {
+  background: rgba(30, 41, 59, 0.85);
+  border: 2px solid #475569;
+  border-radius: 20px;
+  padding: 8px 16px 8px 34px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: #fff;
+  outline: none;
+  width: 150px;
+  transition: all 0.2s ease;
+}
+
+.pv-search-box input:focus {
+  width: 190px;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.3);
+}
+
+.pv-sound-btn {
+  background: rgba(30, 41, 59, 0.85);
+  border: 2px solid #475569;
+  border-radius: 6px;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pv-sound-btn:hover {
+  border-color: var(--gold-primary);
+}
+
+/* "LET'S PLAY" Button */
+.pv-btn-lets-play {
+  background: var(--gold-primary);
+  color: #0f172a;
+  border: 3px solid #000;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000, inset -2px -2px 0 var(--gold-dark), inset 2px 2px 0 #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+
+.pv-btn-lets-play:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 #000, 0 0 12px rgba(250, 204, 21, 0.5);
+}
+
+.pv-btn-lets-play:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.arrow-play {
+  font-size: 10px;
+  color: #000;
+}
+
+/* =========================================================
+   2. SCENERY BACKGROUND (SKY, SUN, MOUNTAINS, CASTLE, WATER)
+   ========================================================= */
+.pv-scenery-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Warm Glowing Pixel Sun in Top Right */
+.pv-pixel-sun {
+  position: absolute;
+  top: 50px;
+  right: 18%;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbeb 20%, #fef08a 60%, #fde047 100%);
+  box-shadow: 0 0 50px rgba(254, 240, 138, 0.8), 0 0 90px rgba(253, 224, 71, 0.4);
+  animation: sunPulse 4s infinite alternate ease-in-out;
+}
+
+@keyframes sunPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(253, 224, 71, 0.6)); }
+  100% { transform: scale(1.08); filter: drop-shadow(0 0 35px rgba(253, 224, 71, 0.9)); }
+}
+
+/* Parallax Drifting Clouds */
+.pv-clouds-layer {
+  position: absolute;
+  inset: 0;
+  height: 55%;
+}
+
+.pixel-cloud {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 6px 0 rgba(147, 197, 253, 0.4);
+  opacity: 0.92;
+}
+
+.pixel-cloud::before, .pixel-cloud::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.cloud-1 {
+  width: 140px;
+  height: 42px;
+  top: 14%;
+  left: -150px;
+  animation: driftCloud 45s linear infinite;
+}
+.cloud-1::before { width: 50px; height: 50px; top: -24px; left: 24px; }
+.cloud-1::after { width: 40px; height: 40px; top: -16px; left: 66px; }
+
+.cloud-2 {
+  width: 180px;
+  height: 48px;
+  top: 24%;
+  left: -200px;
+  animation: driftCloud 65s linear infinite 15s;
+}
+.cloud-2::before { width: 65px; height: 65px; top: -30px; left: 35px; }
+.cloud-2::after { width: 55px; height: 55px; top: -20px; left: 95px; }
+
+.cloud-3 {
+  width: 120px;
+  height: 38px;
+  top: 8%;
+  left: -120px;
+  animation: driftCloud 55s linear infinite 8s;
+}
+.cloud-3::before { width: 45px; height: 45px; top: -20px; left: 20px; }
+
+.cloud-4 {
+  width: 200px;
+  height: 52px;
+  top: 32%;
+  left: -220px;
+  animation: driftCloud 75s linear infinite 25s;
+}
+.cloud-4::before { width: 70px; height: 70px; top: -34px; left: 45px; }
+
+@keyframes driftCloud {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 350px)); }
+}
+
+/* Distant V-Birds */
+.pv-distant-birds {
+  position: absolute;
+  top: 16%;
+  left: 25%;
+  display: flex;
+  gap: 12px;
+  color: #1e3a8a;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  opacity: 0.65;
+  animation: flockGlide 20s infinite linear;
+}
+
+@keyframes flockGlide {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(60px, -15px); }
+  100% { transform: translate(120px, 0); }
+}
+
+/* Distant Mountains */
+.pv-distant-mountains {
+  position: absolute;
+  bottom: 220px;
+  width: 100%;
+  height: 280px;
+  background: #60a5fa;
+  clip-path: polygon(
+    0 100%, 0 60%, 12% 40%, 25% 65%, 38% 35%, 52% 70%, 
+    68% 45%, 82% 28%, 92% 55%, 100% 42%, 100% 100%
+  );
+  opacity: 0.45;
+}
+
+/* Floating Islands */
+.pv-floating-island {
+  position: absolute;
+  animation: islandBob 4s infinite ease-in-out alternate;
+}
+
+@keyframes islandBob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+
+.mini-left {
+  top: 48%;
+  left: 24%;
+  width: 70px;
+  height: 35px;
+}
+.mini-left .island-grass {
+  height: 12px;
+  background: var(--grass-bright);
+  border-radius: 12px 12px 0 0;
+  border-bottom: 3px solid var(--grass-deep);
+}
+.mini-left .island-dirt {
+  height: 20px;
+  background: var(--dirt-brown);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+}
+
+.mini-center {
+  top: 52%;
+  right: 32%;
+  width: 80px;
+  height: 40px;
+  animation-delay: 1.5s;
+}
+.mini-center .island-grass {
+  height: 14px;
+  background: var(--grass-bright);
+  border-radius: 14px 14px 0 0;
+  border-bottom: 3px solid var(--grass-deep);
+}
+.mini-center .island-dirt {
+  height: 24px;
+  background: var(--dirt-brown);
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+}
+
+/* Grand Floating Castle Island with Cascading Waterfall */
+.castle-island {
+  top: 36%;
+  right: 12%;
+  width: 190px;
+  animation-delay: 0.8s;
+}
+
+/* Castle Structure */
+.castle-structure {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 90px;
+}
+
+.castle-tower {
+  width: 32px;
+  height: 70px;
+  background: #cbd5e1;
+  border: 3px solid #334155;
+  position: relative;
+}
+
+.tower-roof {
+  position: absolute;
+  top: -24px;
+  left: -4px;
+  width: 0;
+  height: 0;
+  border-left: 17px solid transparent;
+  border-right: 17px solid transparent;
+  border-bottom: 24px solid #3b82f6;
+}
+
+.tower-flag {
+  position: absolute;
+  top: -34px;
+  left: 11px;
+  width: 14px;
+  height: 9px;
+  background: #ef4444;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  animation: flagWave 1s infinite alternate ease-in-out;
+}
+
+@keyframes flagWave {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(0.75); }
+}
+
+.castle-keep {
+  width: 58px;
+  height: 85px;
+  background: #e2e8f0;
+  border: 3px solid #334155;
+  border-bottom: none;
+  position: relative;
+}
+
+.keep-window {
+  width: 12px;
+  height: 18px;
+  background: #1e293b;
+  border-radius: 6px 6px 0 0;
+  margin: 18px auto 0 auto;
+}
+
+.castle-island .island-grass {
+  height: 24px;
+  background: var(--grass-bright);
+  border-radius: 20px 20px 0 0;
+  border-bottom: 5px solid var(--grass-deep);
+}
+
+.castle-island .island-dirt {
+  height: 70px;
+  background: var(--dirt-brown);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+  box-shadow: inset 0 -10px 0 #451a03;
+}
+
+/* Cascading Waterfall */
+.pv-waterfall-stream {
+  position: absolute;
+  top: 90px;
+  left: 55px;
+  width: 22px;
+  height: 210px;
+  overflow: hidden;
+}
+
+.water-rush {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #67e8f9 0%, #06b6d4 50%, #0891b2 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.8);
+  animation: waterfallFlow 0.5s infinite linear;
+}
+
+@keyframes waterfallFlow {
+  0% { transform: translateY(-10px); }
+  100% { transform: translateY(10px); }
+}
+
+.water-splash-mist {
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  width: 38px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: splashMist 0.8s infinite alternate;
+}
+
+@keyframes splashMist {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.2); opacity: 0.9; }
+}
+
+/* Valley Landscape: Hills, River, Bridge, Windmill */
+.pv-valley-landscape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px;
+}
+
+.valley-hills {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  height: 150px;
+  background: #22c55e;
+  border-top: 6px solid #86efac;
+  border-radius: 50% 50% 0 0 / 25% 25% 0 0;
+}
+
+/* Rotating Windmill */
+.valley-windmill {
+  position: absolute;
+  bottom: 110px;
+  left: 36%;
+  width: 28px;
+  height: 48px;
+}
+
+.windmill-base {
+  width: 24px;
+  height: 38px;
+  background: #f8fafc;
+  border: 2px solid #334155;
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+  margin-top: 10px;
+}
+
+.windmill-blades {
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  width: 4px;
+  height: 4px;
+  animation: rotateWindmill 6s infinite linear;
+}
+
+@keyframes rotateWindmill {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.blade {
+  position: absolute;
+  background: #78350f;
+  width: 4px;
+  height: 22px;
+  transform-origin: top center;
+}
+.b1 { transform: rotate(0deg); }
+.b2 { transform: rotate(90deg); }
+.b3 { transform: rotate(180deg); }
+.b4 { transform: rotate(270deg); }
+
+/* Village Cottages */
+.valley-cottages {
+  position: absolute;
+  bottom: 95px;
+  left: 28%;
+  display: flex;
+  gap: 10px;
+}
+
+.cottage {
+  width: 18px;
+  height: 14px;
+  background: #fef08a;
+  border: 1.5px solid #78350f;
+  position: relative;
+}
+
+.cottage::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -3px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 9px solid #ef4444;
+}
+
+/* Stone Arched Bridge */
+.valley-stone-bridge {
+  position: absolute;
+  bottom: 50px;
+  left: 46%;
+  width: 140px;
+  height: 32px;
+  background: #94a3b8;
+  border-top: 3px solid #e2e8f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.bridge-arch {
+  width: 28px;
+  height: 20px;
+  background: #0ea5e9;
+  border-radius: 14px 14px 0 0;
+}
+
+/* Shimmering River */
+.valley-river {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+  overflow: hidden;
+}
+
+.water-shimmer {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+  background-size: 80px 100%;
+  animation: riverShimmer 3s infinite linear;
+}
+
+@keyframes riverShimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(100vw + 200px) 0; }
+}
+
+/* =========================================================
+   3. THE FLYING ANGRY BIRD
+   ========================================================= */
+.pv-angry-bird-wrapper {
+  position: absolute;
+  z-index: 30;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  display: flex;
+  align-items: center;
+}
+
+.pv-angry-bird-wrapper:hover {
+  transform: scale(1.18);
+}
+
+.pv-angry-bird-wrapper.boost {
+  animation: birdSpinBoost 0.8s ease-in-out;
+}
+
+@keyframes birdSpinBoost {
+  0% { transform: rotate(0deg) scale(1.1); }
+  50% { transform: rotate(360deg) scale(1.3); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+
+.pv-angry-bird-svg {
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.35));
+}
+
+.bird-wing.wing-up {
+  transform: translateY(-4px) rotate(15deg);
+}
+
+.bird-wing.wing-down {
+  transform: translateY(2px) rotate(-15deg);
+}
+
+.angry-bird-bubble {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #dc2626;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 #000;
+  z-index: 40;
+}
+
+.angry-bird-trail {
+  position: absolute;
+  left: -30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.trail-line {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  animation: trailFlicker 0.2s infinite alternate;
+}
+.line-1 { width: 28px; }
+.line-2 { width: 36px; }
+.line-3 { width: 22px; }
+
+@keyframes trailFlicker {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.95; }
+}
+
+/* =========================================================
+   4. MAIN VIEWPORT STAGE & LAYOUT
+   ========================================================= */
+.pv-main-stage {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 20px 20px 20px;
+}
+
+/* =========================================================
+   5. LEFT GRASSY CLIFF WITH KID & SHIBA
+   ========================================================= */
+.pv-left-cliff-scene {
+  position: relative;
+  width: 270px;
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Tree Canopy from Top Left */
+.pv-tree-canopy {
+  position: absolute;
+  top: -40px;
+  left: -30px;
+  width: 220px;
+  height: 120px;
+  pointer-events: none;
+}
+
+.tree-leaf-cluster {
+  position: absolute;
+  background: #15803d;
+  border-radius: 50%;
+  border: 4px solid #166534;
+}
+.cluster-1 { width: 90px; height: 90px; top: 0; left: 0; }
+.cluster-2 { width: 110px; height: 95px; top: 15px; left: 45px; background: #22c55e; }
+.cluster-3 { width: 80px; height: 75px; top: 35px; left: 110px; }
+
+/* Hanging Wooden Sign */
+.pv-hanging-sign {
+  position: absolute;
+  top: 55px;
+  left: 30px;
+  z-index: 25;
+  cursor: pointer;
+  transform-origin: top center;
+  animation: signGentleSway 4s infinite ease-in-out alternate;
+}
+
+.pv-hanging-sign.swinging {
+  animation: signWildSwing 1.5s ease-in-out;
+}
+
+@keyframes signGentleSway {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+@keyframes signWildSwing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-14deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.sign-rope {
+  position: absolute;
+  top: -18px;
+  width: 3px;
+  height: 20px;
+  background: #78350f;
+}
+.rope-left { left: 16px; }
+.rope-right { right: 16px; }
+
+.wooden-sign-board {
+  background: #854d0e;
+  border: 4px solid #451a03;
+  border-radius: 6px;
+  padding: 10px 14px;
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.sign-line {
+  font-family: var(--font-pixel);
+  font-size: 7.5px;
+  color: #fef08a;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.sign-heart {
+  color: #ef4444;
+  font-size: 10px;
+  display: block;
+  margin-top: 4px;
+  animation: heartPulse 1.2s infinite alternate;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(0.9); }
+  100% { transform: scale(1.3); }
+}
+
+/* Wooden Fence */
+.pv-wood-fence {
+  position: absolute;
+  bottom: 125px;
+  left: 15px;
+  width: 90px;
+  height: 50px;
+}
+
+.fence-post {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 48px;
+  background: #854d0e;
+  border: 2px solid #451a03;
+}
+.post-1 { left: 10px; }
+.post-2 { right: 10px; }
+
+.fence-rail {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: #a16207;
+  border: 2px solid #451a03;
+}
+.rail-top { top: 12px; }
+.rail-bottom { top: 28px; }
+
+/* Cute Pet Dog */
+.pv-pet-dog {
+  position: absolute;
+  bottom: 125px;
+  left: 95px;
+  z-index: 22;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.pv-pet-dog:hover {
+  transform: scale(1.15);
+}
+
+.dog-tail {
+  animation: tailWag 0.35s infinite alternate ease-in-out;
+  transform-origin: 14px 26px;
+}
+
+@keyframes tailWag {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(20deg); }
+}
+
+.dog-heart-float {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #ef4444;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  padding: 3px 6px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* THE ANIMATED KID ADVENTURER */
+.pv-kid-character {
+  position: absolute;
+  bottom: 110px;
+  left: 140px;
+  z-index: 25;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pv-kid-character.idle-breathing {
+  animation: kidBreathIdle 3s infinite ease-in-out;
+}
+
+@keyframes kidBreathIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.pv-kid-character.jumping {
+  animation: kidJumpAction 0.6s ease-out;
+}
+
+@keyframes kidJumpAction {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-40px) scale(1.05); }
+  75% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* DYNAMIC WIND-BLOWN CAPE FLUTTER */
+.kid-cape-group {
+  animation: capeFlutter 0.8s infinite ease-in-out alternate;
+  transform-origin: 34px 46px;
+}
+
+@keyframes capeFlutter {
+  0% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  50% {
+    transform: rotate(-12deg) skewX(8deg);
+  }
+  100% {
+    transform: rotate(-24deg) skewX(16deg) translateY(-3px);
+  }
+}
+
+.kid-speech-bubble {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  font-weight: bold;
+  padding: 6px 10px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 #000;
+  z-index: 30;
+}
+
+/* Cliff Base */
+.pv-cliff-base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  z-index: 10;
+}
+
+.cliff-grass-top {
+  width: 100%;
+  height: 32px;
+  background: #22c55e;
+  border-top: 6px solid #86efac;
+  border-bottom: 5px solid #15803d;
+  box-shadow: 0 4px 0 #166534;
+}
+
+.cliff-dirt-rock {
+  width: 100%;
+  height: 98px;
+  background: #78350f;
+  box-shadow: inset 0 8px 0 #451a03, inset -10px 0 0 #451a03;
+}
+
+/* =========================================================
+   6. CENTER HERO BRANDING & 3D LOGO
+   ========================================================= */
+.pv-hero-center {
+  position: relative;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Top Tagline: PLAY ♥ EXPLORE ♥ CREATE ♥ BELONG */
+.pv-hero-tagline-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-pixel);
+  font-size: clamp(9px, 1.4vw, 13px);
+  color: #1e293b;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.heart-dot {
+  color: #ef4444;
+  font-size: 13px;
+  animation: heartPulse 1.2s infinite alternate;
+}
+
+/* GIANT 3D BLOCK PIXEL PLAYVERSE LOGO */
+.pv-logo-container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.pv-3d-logo {
+  font-size: clamp(44px, 7.5vw, 86px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: inline-flex;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.pv-3d-logo:hover {
+  transform: scale(1.02);
+}
+
+/* "PLAY" Word in 3D White/Silver Block */
+.logo-word-play {
+  color: #ffffff;
+  text-shadow: 
+    0 2px 0 #cbd5e1,
+    0 4px 0 #94a3b8,
+    0 6px 0 #64748b,
+    0 8px 0 #334155,
+    3px 8px 0 #0f172a,
+    -3px 0 0 #000,
+    3px 0 0 #000,
+    0 -3px 0 #000,
+    0 10px 0 #000,
+    5px 10px 0 #000,
+    -3px 10px 0 #000;
+}
+
+/* "VERSE" Word in 3D Yellow/Gold Block */
+.logo-word-verse {
+  color: #fde047;
+  text-shadow: 
+    0 2px 0 #facc15,
+    0 4px 0 #eab308,
+    0 6px 0 #ca8a04,
+    0 8px 0 #854d0e,
+    3px 8px 0 #451a03,
+    -3px 0 0 #000,
+    3px 0 0 #000,
+    0 -3px 0 #000,
+    0 10px 0 #000,
+    5px 10px 0 #000,
+    -3px 10px 0 #000;
+}
+
+/* Floating "Level Up Yourself ♥" Tag */
+.pv-floating-badge {
+  position: absolute;
+  top: -20px;
+  right: -55px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: #0f172a;
+  font-weight: bold;
+  transform: rotate(12deg);
+  animation: badgeBounce 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes badgeBounce {
+  0% { transform: rotate(12deg) translateY(0); }
+  100% { transform: rotate(15deg) translateY(-6px); }
+}
+
+.badge-heart {
+  color: #ec4899;
+}
+
+/* Bottom Tagline: GAMES TODAY ♥ ADVENTURES TOMORROW */
+.pv-hero-tagline-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-pixel);
+  font-size: clamp(8px, 1.2vw, 11px);
+  color: #1e293b;
+  letter-spacing: 2px;
+  margin-bottom: 26px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Golden "START PLAYING ▶" Button */
+.pv-btn-start-playing {
+  background: var(--gold-primary);
+  color: #0f172a;
+  font-family: var(--font-pixel);
+  font-size: clamp(12px, 1.6vw, 15px);
+  font-weight: bold;
+  padding: 16px 36px;
+  border: 4px solid #000;
+  border-radius: 12px;
+  box-shadow: 0 6px 0 var(--gold-dark), 0 10px 0 #000;
+  cursor: pointer;
+  letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.1s ease-in-out;
+}
+
+.pv-btn-start-playing:hover {
+  background: #fef08a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 var(--gold-dark), 0 12px 0 #000, 0 0 20px rgba(250, 204, 21, 0.6);
+}
+
+.pv-btn-start-playing:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #000;
+}
+
+.arrow-triangle {
+  font-size: 12px;
+}
+
+/* =========================================================
+   7. RIGHT GRASSY CLIFF WITH SIGNPOST, CHEST, MUSHROOM
+   ========================================================= */
+.pv-right-cliff-scene {
+  position: relative;
+  width: 250px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* 4-Plank Wooden Signpost */
+.pv-wooden-signpost {
+  position: absolute;
+  bottom: 125px;
+  right: 25px;
+  z-index: 22;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.signpost-pole {
+  position: absolute;
+  top: 10px;
+  width: 14px;
+  height: 160px;
+  background: #78350f;
+  border: 2px solid #451a03;
+  z-index: 1;
+}
+
+.signpost-plank {
+  position: relative;
+  z-index: 2;
+  width: 175px;
+  background: #854d0e;
+  border: 3px solid #451a03;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  color: #fef08a;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+
+.signpost-plank:hover {
+  background: #a16207;
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.plank-arrow {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Sparkles on Chest Open */
+.chest-sparkles-container {
+  position: absolute;
+  bottom: 160px;
+  left: 20px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.coin-sparkle {
+  background: #ffffff;
+  color: #d97706;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  animation: floatUpFade 1.4s forwards ease-out;
+}
+
+@keyframes floatUpFade {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+
+/* Interactive Treasure Chest */
+.pv-treasure-chest {
+  position: absolute;
+  bottom: 125px;
+  left: 15px;
+  z-index: 22;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.pv-treasure-chest:hover {
+  transform: scale(1.1);
+}
+
+.chest-lid {
+  transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+  transform-origin: 35px 24px;
+}
+
+.pv-treasure-chest.open .chest-lid {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* Super Red Mushroom */
+.pv-super-mushroom {
+  position: absolute;
+  bottom: 125px;
+  left: 78px;
+  z-index: 22;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.pv-super-mushroom:hover {
+  transform: scale(1.2);
+}
+
+.pv-super-mushroom.bouncing {
+  animation: mushroomBounce 0.5s ease-out;
+}
+
+@keyframes mushroomBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-26px) scale(1.15); }
+  100% { transform: translateY(0); }
+}
+
+/* Flowers on Grass */
+.pv-flowers-row {
+  position: absolute;
+  bottom: 125px;
+  left: 125px;
+  z-index: 22;
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+}
+
+/* Right Cliff Base */
+.pv-right-cliff-base {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 130px;
+  z-index: 10;
+}
+
+/* =========================================================
+   8. BOTTOM TRANSLUCENT CURVED DOCK
+   ========================================================= */
+.pv-bottom-dock-container {
+  position: relative;
+  z-index: 40;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.pv-bottom-dock {
+  display: flex;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(8px);
+  border: 3px solid #334155;
+  border-radius: 20px;
+  padding: 12px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.pv-dock-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  background: rgba(30, 41, 59, 0.6);
+  border: 2px solid transparent;
+  transition: all 0.15s ease-in-out;
+}
+
+.pv-dock-card:hover, .pv-dock-card.active {
+  background: rgba(51, 65, 85, 0.95);
+  border-color: var(--gold-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.dock-card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.icon-purple { background: #7c3aed; }
+.icon-yellow { background: #eab308; }
+.icon-gold { background: #f59e0b; }
+.icon-pink { background: #ec4899; }
+
+.dock-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+.dock-card-title {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.dock-card-subtitle {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+/* =========================================================
+   9. MODALS & POPUPS
+   ========================================================= */
+.pv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFade 0.2s ease-out;
+}
+
+@keyframes modalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pv-modal-window {
+  background: #0f172a;
+  border: 4px solid var(--gold-primary);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 35px rgba(250, 204, 21, 0.35), 0 10px 0 #000;
+  overflow: hidden;
+}
+
+.pv-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #1e293b;
+  border-bottom: 3px solid #334155;
+}
+
+.modal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-header-icon {
+  font-size: 24px;
+}
+
+.modal-title {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--gold-primary);
+  letter-spacing: 1px;
+}
+
+.pv-modal-close-btn {
+  background: transparent;
+  border: 2px solid var(--gold-primary);
+  color: var(--gold-primary);
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pv-modal-close-btn:hover {
+  background: var(--gold-primary);
+  color: #000;
+}
+
+.pv-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Coin Catcher Mini-Game Inside Modal */
+.games-tab-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background: #1e293b;
+  border: 2px solid #334155;
+  color: #cbd5e1;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: var(--gold-primary);
+  border-color: #000;
+  color: #000;
+  font-weight: bold;
+}
+
+.minigame-arena {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.minigame-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  background: #1e293b;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+.btn-play-mini {
+  background: var(--gold-primary);
+  color: #000;
+  border: 2px solid #000;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-play-mini.pause {
+  background: #ef4444;
+  color: #fff;
+}
+
+.minigame-screen {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
+  border: 3px solid var(--gold-primary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.falling-item {
+  position: absolute;
+  font-size: 24px;
+  transform: translate(-50%, -50%);
+}
+
+.player-catcher {
+  position: absolute;
+  bottom: 10px;
+  font-size: 32px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-over-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #ef4444;
+}
+
+.mobile-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ctrl-arrow {
+  background: #334155;
+  color: #fff;
+  border: 2px solid #64748b;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Game Catalog Grid */
+.game-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.catalog-card {
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.catalog-icon {
+  font-size: 32px;
+}
+
+.catalog-details h4 {
+  font-size: 10px;
+  color: #facc15;
+  margin-bottom: 4px;
+}
+
+.catalog-details p {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.catalog-play-btn {
+  margin-left: auto;
+  background: var(--gold-primary);
+  color: #000;
+  border: 2px solid #000;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Worlds Grid */
+.worlds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.world-card {
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.world-card.unlocked {
+  border-color: #22c55e;
+}
+
+.world-card.locked {
+  opacity: 0.6;
+}
+
+.world-icon {
+  font-size: 36px;
+}
+
+.world-info h3 {
+  font-size: 11px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.world-level {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: #facc15;
+}
+
+.world-info p {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: #94a3b8;
+  margin: 6px 0 12px 0;
+  line-height: 1.4;
+}
+
+.btn-enter-world {
+  background: #22c55e;
+  color: #000;
+  border: 2px solid #000;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Quests List */
+.quests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quest-item {
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quest-item.completed {
+  border-color: #22c55e;
+}
+
+.quest-icon {
+  font-size: 26px;
+}
+
+.quest-info h4 {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.badge-done {
+  color: #22c55e;
+  font-size: 8px;
+  margin-left: 8px;
+}
+
+.quest-info p {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.quest-exp {
+  margin-left: auto;
+  color: #facc15;
+  font-size: 10px;
+}
+
+/* Guild Form */
+.belong-card h3 {
+  font-size: 12px;
+  color: #facc15;
+  margin-bottom: 8px;
+}
+
+.belong-card p {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.guild-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 9px;
+  color: #cbd5e1;
+}
+
+.form-field input {
+  background: #1e293b;
+  border: 2px solid #475569;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  color: #fff;
+  outline: none;
+}
+
+.btn-join-guild {
+  background: var(--gold-primary);
+  color: #000;
+  border: 3px solid #000;
+  padding: 14px;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.registered-success {
+  text-align: center;
+  padding: 20px;
+}
+
+.success-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Search results */
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-result-row {
+  background: #1e293b;
+  padding: 14px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-result-row h4 {
+  font-size: 11px;
+  color: #facc15;
+  margin-bottom: 4px;
+}
+
+.search-type {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.search-tag {
+  background: #7c3aed;
+  font-size: 9px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   10. RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 1024px) {
+  .pv-main-stage {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .pv-left-cliff-scene, .pv-right-cliff-scene {
+    width: 100%;
+    max-width: 360px;
+    height: 320px;
+  }
+  
+  .pv-bottom-dock {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pv-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .pv-header {
+    padding: 12px 16px;
+  }
+  
+  .pv-3d-logo {
+    font-size: 36px;
+  }
+  
+  .pv-hero-tagline-top {
+    font-size: 8px;
+    gap: 6px;
+  }
+  
+  .pv-btn-start-playing {
+    padding: 12px 24px;
+    font-size: 11px;
+  }
+  
+  .pv-bottom-dock {
+    gap: 8px;
+    padding: 10px 14px;
+  }
+  
+  .pv-dock-card {
+    padding: 8px 10px;
+  }
+  
+  .dock-card-title {
+    font-size: 9px;
+  }
+  
+  .dock-card-subtitle {
+    display: none;
+  }
+}
